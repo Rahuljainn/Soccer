@@ -9,6 +9,7 @@ export const addNewPlayer = (req, res) => {
   newPlayer
     .save()
     .then((Player) => {
+      // The error message "MongooseError: Model.prototype.save() no longer accepts a callback"
       res.json(Player);
     })
     .catch((err) => {
