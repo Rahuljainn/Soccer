@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const PlayerSchema = new mongoose.Schema({
-  fisrtName: {
+  firstName: {
     type: String,
     unique: false,
     required: [true, "Please add a first name"],

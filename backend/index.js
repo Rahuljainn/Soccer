@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose, { mongo } from "mongoose";
 import bodyparser from "body-parser";
+import cors from "cors";
 import routes from "./routes/socRoutes.js";
 
 dotenv.config({ path: "./config/config.env" });
@@ -22,6 +23,7 @@ connectDb();
 // Body Parser
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
+app.use(cors());
 
 routes(app);
 
@@ -37,3 +39,10 @@ app
   .listen(process.env.PORT, () => {
     console.log(`App runnning on ${process.env.PORT}`);
   });
+
+app.get("/:id", (req, res) => {
+  res.json({
+    status: 200,
+    message: `Soccer Running..! on ${process.env.PORT}`,
+  });
+});
