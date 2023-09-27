@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const url = "http://localhost:3000/players";
+    const url = "http://localhost:4000/players";
 
     axios
       .get(url)

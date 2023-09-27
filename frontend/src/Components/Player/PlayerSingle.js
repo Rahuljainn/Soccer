@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const PlayerSingle = () => {
-  return <div>PlayerSingle</div>;
-};
-
+    return ( <div>
+        PlayerSingle
+    </div> );
+}
+ 
 export default PlayerSingle;
