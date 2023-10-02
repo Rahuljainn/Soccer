@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const url = "http://localhost:4000/players";
+    const url = "http://localhost:8000/players";
 
     axios
       .get(url)
@@ -41,7 +41,13 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col s12">Menu</div>
+          <nav>
+            <div className="nav-wrapper indigo darken-3">
+              <a href="/" className="brand-logo">
+                Soccer Management
+              </a>
+            </div>
+          </nav>
         </div>
         <div className="row">
           <div className="col s3">
@@ -51,7 +57,7 @@ class App extends React.Component {
             />
           </div>
           <div className="col s9">
-            <PlayerSingle />
+            <PlayerSingle player={this.state.currentPlayer} />
           </div>
         </div>
         <div className="row">
